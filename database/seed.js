@@ -1,4 +1,4 @@
-const { db, HistoricalPrices } = require('./schema.js');
+const HistoricalPrices = require('./schema.js');
 
 const seedBTCPrices = {
   bpi: {

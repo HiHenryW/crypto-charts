@@ -1,10 +1,8 @@
 // Set up db connection
 const mongoose = require('mongoose');
-const db = mongoose.connect('mongodb://localhost/crypto-charts', (err) => {
-  if (err) {
-    throw err;
-  }
-  console.log('Connected to mongodb!');
+const db = mongoose.connect('mongodb://localhost/crypto-charts', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 // Set up schema for historical data
@@ -19,5 +17,4 @@ const HistoricalPrices = mongoose.model(
   historicalPricesSchema
 );
 
-exports.db = db;
-exports.HistoricalPrices = HistoricalPrices;
+module.exports = HistoricalPrices;
