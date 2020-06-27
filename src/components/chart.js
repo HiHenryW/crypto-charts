@@ -10,16 +10,20 @@ class Chart extends React.Component {
     this.updateChart = this.updateChart.bind(this);
   }
 
-  componentWillUpdate() {
-    console.log('this.props.chartData: ', this.props.chartData);
-    this.updateChart(this.props.chartData);
+  componentDidUpdate(prevProps) {
+    // console.log('this.props.chartData: ', this.props.chartData);
+    if (this.props.chartData !== prevProps.chartData) {
+      console.log('this.props.chartData: ', this.props.chartData);
+      console.log('prevProps: ', prevProps);
+      this.updateChart(this.props.chartData);
+    }
   }
 
   updateChart(data) {
     this.setState({
       chartData: data,
     });
-    console.log('updateChart ran, state: ', this.state);
+    // console.log('updateChart ran, state: ', this.state);
   }
 
   render() {
@@ -27,13 +31,13 @@ class Chart extends React.Component {
       <div>
         <Line
           data={this.state.chartData}
-          height={50}
+          // height={50}
           options={{
             // responsive: true,
             // maintainAspectRatio: false,
             title: {
-              display: true,
-              text: 'Average Rainfall per month',
+              display: false,
+              text: 'Bitcoin Historical Prices',
               fontSize: 20,
             },
             legend: {
