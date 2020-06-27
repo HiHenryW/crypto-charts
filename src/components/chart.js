@@ -10,7 +10,8 @@ class Chart extends React.Component {
     this.updateChart = this.updateChart.bind(this);
   }
 
-  componentDidMount() {
+  componentWillUpdate() {
+    console.log('this.props.chartData: ', this.props.chartData);
     this.updateChart(this.props.chartData);
   }
 
@@ -18,6 +19,7 @@ class Chart extends React.Component {
     this.setState({
       chartData: data,
     });
+    console.log('updateChart ran, state: ', this.state);
   }
 
   render() {

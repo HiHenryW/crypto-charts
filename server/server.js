@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const HistoricalPrices = require('../database/schema.js');
 
 app.listen(port, () => {
@@ -9,6 +10,7 @@ app.listen(port, () => {
 });
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // console.log('HistoricalPrices: ', HistoricalPrices);
 
