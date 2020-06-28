@@ -1,8 +1,49 @@
-/* -------- BASIC SETUP -------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   background-color: white;
   color: #555;
   font-family: 'Roboto', sans-serif;
   font-size: 300;
+}
+
+.main-content-wrapper-lower {
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+.details-wrapper {
+  background-color: hotpink;
+}
+
+.title {
+  border-bottom: 1px solid rgba(85, 85, 85, 0.8);
+}
+
+.currency-heading {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 38px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+img {
+  height: 30px;
+  width: auto;
+  image-rendering: optimizeQuality;
 }

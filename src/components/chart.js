@@ -13,8 +13,8 @@ class Chart extends React.Component {
   componentDidUpdate(prevProps) {
     // console.log('this.props.chartData: ', this.props.chartData);
     if (this.props.chartData !== prevProps.chartData) {
-      console.log('this.props.chartData: ', this.props.chartData);
-      console.log('prevProps: ', prevProps);
+      // console.log('this.props.chartData: ', this.props.chartData);
+      // console.log('prevProps: ', prevProps);
       this.updateChart(this.props.chartData);
     }
   }
@@ -41,8 +41,34 @@ class Chart extends React.Component {
               fontSize: 20,
             },
             legend: {
-              display: true,
+              display: false,
               position: 'right',
+            },
+            scales: {
+              xAxes: [
+                {
+                  gridLines: {
+                    display: false,
+                  },
+                  ticks: {
+                    maxTicksLimit: 15,
+                  },
+                  type: 'time',
+                  time: {
+                    tooltipFormat: 'MM-DD-YY',
+                    displayFormats: {
+                      day: "MMM DD 'YY",
+                    },
+                  },
+                },
+              ],
+              yAxes: [
+                {
+                  gridLines: {
+                    display: false,
+                  },
+                },
+              ],
             },
           }}
         />

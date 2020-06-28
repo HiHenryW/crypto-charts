@@ -1,6 +1,9 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
 import Chart from './components/chart.js';
+import Title from './components/title.js';
+import Details from './components/details.js';
+import logo from './cryptocharts_logo.png';
 const axios = require('axios');
 
 class App extends React.Component {
@@ -55,7 +58,22 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Chart chartData={this.state.chartData} />
+        <header className="logo-wrapper">
+          <img src={logo} alt="cryptocharts logo" />
+        </header>
+        <div className="main-content-wrapper-upper">
+          <div className="details-wrapper">
+            <Title />
+            <Details />
+          </div>
+        </div>
+        <div className="main-content-wrapper-lower">
+          <Chart chartData={this.state.chartData} />
+          <span>Powered by </span>
+          <a href="https://www.coindesk.com/price/bitcoin" target="blank">
+            CoinDesk
+          </a>
+        </div>
       </div>
     );
   }

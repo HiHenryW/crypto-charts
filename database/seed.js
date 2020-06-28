@@ -185,13 +185,15 @@ const seedBTCPrices = {
 };
 
 const insertSeedData = (data) => {
+  let promises = [];
   for (let date in data) {
     let instance = new HistoricalPrices({
       onDate: date,
       closingPrice: data[date],
     });
-    instance.save();
+    promises.push(instance.save());
   }
+  Promise.all(promises);
 };
 
-// insertSeedData(seedBTCPrices.bpi);
+insertSeedData(seedBTCPrices.bpi);
