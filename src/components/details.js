@@ -10,6 +10,7 @@ class Details extends React.Component {
     };
 
     this.getCurrentPrice = this.getCurrentPrice.bind(this);
+    this.updatePrice = this.updatePrice.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +33,7 @@ class Details extends React.Component {
           minimumFractionDigits: 0,
           maximumFractionDigits: 0,
         });
-        console.log('priceFormatted: ', priceFormatted);
+        // console.log('priceFormatted: ', priceFormatted);
         this.setState({
           currentPrice: priceFormatted,
         });
@@ -40,6 +41,11 @@ class Details extends React.Component {
       .catch((err) => {
         console.log('err in getCurrentPrice: ', err);
       });
+  }
+
+  updatePrice() {
+    // console.log('updatePrice ran!');
+    this.getCurrentPrice();
   }
 
   render() {
@@ -51,7 +57,15 @@ class Details extends React.Component {
         </dl>
         <dl>
           <dt>Currency</dt>
-          <dd>{this.state.currency}</dd>
+          <dd id="currency-label">{this.state.currency}</dd>
+        </dl>
+        <dl>
+          <input
+            type="submit"
+            value="Refresh"
+            className="refresh-button"
+            onClick={this.updatePrice}
+          ></input>
         </dl>
       </div>
     );
