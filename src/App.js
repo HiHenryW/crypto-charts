@@ -39,7 +39,16 @@ class App extends React.Component {
             datasets: [
               {
                 label: 'BTC',
-                borderWidth: 2,
+                borderWidth: 3,
+                borderColor: '#00B2EE',
+                backgroundColor: '#b4e3fe',
+                pointRadius: 0,
+                hoverBackgroundColor: '#00B2EE',
+                pointHoverRadius: 5,
+                pointBorderWidth: 0,
+                pointHoverBorderWidth: 0,
+                pointHoverBorderColor: '#00B2EE',
+                pointHitRadius: 5,
                 data: datapoints,
               },
             ],
@@ -69,10 +78,12 @@ class App extends React.Component {
         </div>
         <div className="main-content-wrapper-lower">
           <Chart chartData={this.state.chartData} />
-          <span>Powered by </span>
-          <a href="https://www.coindesk.com/price/bitcoin" target="blank">
-            CoinDesk
-          </a>
+          <div className="source">
+            <span>Powered by </span>
+            <a href="https://www.coindesk.com/price/bitcoin" target="blank">
+              CoinDesk
+            </a>
+          </div>
         </div>
       </div>
     );

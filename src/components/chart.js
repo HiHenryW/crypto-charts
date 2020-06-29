@@ -35,6 +35,14 @@ class Chart extends React.Component {
           options={{
             // responsive: true,
             // maintainAspectRatio: false,
+            layout: {
+              padding: {
+                left: 30,
+                right: 30,
+                top: 30,
+                bottom: 30,
+              },
+            },
             title: {
               display: false,
               text: 'Bitcoin Historical Prices',
@@ -52,6 +60,7 @@ class Chart extends React.Component {
                   },
                   ticks: {
                     maxTicksLimit: 15,
+                    fontColor: 'white',
                   },
                   type: 'time',
                   time: {
@@ -66,6 +75,17 @@ class Chart extends React.Component {
                 {
                   gridLines: {
                     display: false,
+                  },
+                  ticks: {
+                    fontColor: 'white',
+                    callback: function (value, index, values) {
+                      return value.toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      });
+                    },
                   },
                 },
               ],

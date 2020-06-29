@@ -9,6 +9,7 @@ body {
   color: #555;
   font-family: 'Roboto', sans-serif;
   font-size: 300;
+  background-color: #f5f5f5;
 }
 
 .main-content-wrapper-lower {
@@ -16,8 +17,12 @@ body {
   padding-right: 26px;
 }
 
-.details-wrapper {
+/* .details-wrapper {
   background-color: #f5f5f5;
+} */
+
+canvas {
+  background-color: rgb(88, 88, 88);
 }
 
 .title {
@@ -102,4 +107,22 @@ img {
   height: 30px;
   width: auto;
   image-rendering: optimizeQuality;
+}
+
+.source {
+  font-size: 14px;
+  font-weight: 300;
+  padding-top: 10px;
+}
+
+div a {
+  font-weight: 700;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  color: #2b57c5;
+}
+
+div a:hover {
+  text-decoration: underline;
+  color: #f1c40f;
 }
